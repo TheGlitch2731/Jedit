@@ -54,7 +54,9 @@ class Jedit extends JFrame implements ActionListener{
          JMenuItem menuclose = new JMenuItem("Close");
 
          menuclose.addActionListener(this);
-
+        
+         Jedit.add(menuclose);
+        
          menu.add(Jedit);
          menu.add(menu1);
          menu.add(menu2);
