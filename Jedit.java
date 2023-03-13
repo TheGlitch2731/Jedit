@@ -37,9 +37,9 @@ class Jedit extends JFrame implements ActionListener{
 
          JMenu menu2 = new JMenu("Edit");
 
-         JMenuItem menui4 = new JMenuItem("cut");
-         JMenuItem menui5 = new JMenuItem("copy");
-         JMenuItem menui6 = new JMenuItem("paste");
+         JMenuItem menui4 = new JMenuItem("Cut");
+         JMenuItem menui5 = new JMenuItem("Copy");
+         JMenuItem menui6 = new JMenuItem("Paste");
 
          menui4.addActionListener(this);
          menui5.addActionListener(this);
@@ -49,12 +49,16 @@ class Jedit extends JFrame implements ActionListener{
          menu2.add(menui5);
          menu2.add(menui6);
 
-         JMenuItem close = new JMenuItem("close");
-         close.addActionListener(this);
+         JMenu Jedit = new JMenu("Jedit");
 
+         JMenuItem menuclose = new JMenuItem("Close");
+
+         menuclose.addActionListener(this);
+
+         menu.add(Jedit);
          menu.add(menu1);
          menu.add(menu2);
-         menu.add(close);
+
 
          frame.setJMenuBar(menu);
          frame.add(text);
@@ -65,14 +69,14 @@ class Jedit extends JFrame implements ActionListener{
      @Override
 public void actionPerformed(ActionEvent e) {
     String str = e.getActionCommand();
-    if (str.equals("cut")) {
+    if (str.equals("Cut")) {
         text.cut();
     }
-   else if (str.equals("paste")) {
+   else if (str.equals("Paste")) {
         text.paste();
 
     }
-    else if (str.equals("copy")) {
+    else if (str.equals("Copy")) {
         text.copy();
     }
     else if (str.equals("Save")) {
@@ -130,7 +134,7 @@ public void actionPerformed(ActionEvent e) {
     else if (str.equals("New")) {
         text.setText("");
     }
-    else if (str.equals("close")) {
+    else if (str.equals("Close")) {
         frame.setVisible(false);
         System.exit(0);
 }
